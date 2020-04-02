@@ -1,15 +1,15 @@
 <script>
   import { hold } from "./actions";
 
-  export let onMouseDown = () => {};
-  export let onMouseUp = () => {};
+  export let onmousedown = () => {};
+  export let onmouseup = () => {};
   export let color = {};
 </script>
 
 <button
   style="--bg:{color.bg}; --text:{color.text}"
   on:click
-  use:hold={[onMouseDown, onMouseUp]}>
+  use:hold={[onmousedown, onmouseup]}>
   <slot />
 </button>
 
