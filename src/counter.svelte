@@ -1,6 +1,6 @@
 <script>
-  import Button from "./ui/button.svelte";
-  import Input from "./ui/input.svelte";
+  import Button from "./ui/Button.svelte";
+  import Input from "./ui/Input.svelte";
 
   export let count = 1;
   export let color = {};

@@ -1,7 +1,7 @@
 <script>
   import { darkTheme } from "./store";
-  import Counter from "./counter.svelte";
-  import Button from "./ui/button.svelte";
+  import Counter from "./Counter.svelte";
+  import Button from "./ui/Button.svelte";
 
   let color = {};
 
