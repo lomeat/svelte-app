@@ -1,9 +1,17 @@
 <script>
-  export let name = "button";
   export let onmousedown = () => {};
   export let onmouseup = () => {};
   export let color = {};
 </script>
+
+<button
+  style="--bg:{color.bg}; --text:{color.text}"
+  on:click
+  on:mousedown={onmousedown}
+  on:mouseup={onmouseup}
+  on:mouseout={onmouseup}>
+  <slot />
+</button>
 
 <style lang="scss">
   $background: var(--bg);
@@ -12,12 +20,11 @@
   button {
     padding: 6px 20px;
     border-radius: 4px;
-    font-family: $fira;
+    font-family: $roboto;
     font-size: 22px;
-    background: $background;
+    background: transparent;
     color: $text;
     transition: 0.1s ease;
-    transition: background 0.3s ease;
     cursor: pointer;
 
     &:hover {
@@ -30,12 +37,3 @@
     }
   }
 </style>
-
-<button
-  style="--bg:{color.bg}; --text:{color.text}"
-  on:click
-  on:mousedown={onmousedown}
-  on:mouseup={onmouseup}
-  on:mouseout={onmouseup}>
-  <slot />
-</button>

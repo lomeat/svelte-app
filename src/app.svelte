@@ -23,6 +23,20 @@
   }
 </script>
 
+<svelte:head>
+  <link
+    href="https://fonts.googleapis.com/css?family=Overpass:400,700&display=swap"
+    rel="stylesheet" />
+</svelte:head>
+
+<div class="body" style="--bg:{color.bg}; --text:{color.text}">
+  <div class="container">
+    <h1>Counter with holding delay</h1>
+    <Counter count={42} {color} />
+    <Button {color} on:click={toggleTheme}>Toggle theme</Button>
+  </div>
+</div>
+
 <style lang="scss" global>
   $background: var(--bg);
   $text: var(--text);
@@ -57,16 +71,9 @@
   }
 
   h1 {
-    font: bold 30px $roboto;
+    font: bold 30px $overpass;
+    font-size: 32px;
     padding: 20px 0;
     color: $text;
   }
 </style>
-
-<div class="body" style="--bg:{color.bg}; --text:{color.text}">
-  <div class="container">
-    <h1>Counter with holding delay</h1>
-    <Counter count={42} {color} />
-    <Button {color} on:click={toggleTheme}>Toggle theme</Button>
-  </div>
-</div>

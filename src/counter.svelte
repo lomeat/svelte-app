@@ -37,6 +37,12 @@
   };
 </script>
 
+<wrapper style="--text:{color.text}">
+  <Button {color} onmousedown={dec} onmouseup={mouseUp}>-</Button>
+  <input bind:value={count} on:change={change} />
+  <Button {color} onmousedown={inc} onmouseup={mouseUp}>+</Button>
+</wrapper>
+
 <style lang="scss">
   $text: var(--text);
 
@@ -70,9 +76,3 @@
     }
   }
 </style>
-
-<wrapper style="--text:{color.text}">
-  <Button {color} onmousedown={dec} onmouseup={mouseUp}>-</Button>
-  <input bind:value={count} on:change={change} />
-  <Button {color} onmousedown={inc} onmouseup={mouseUp}>+</Button>
-</wrapper>
