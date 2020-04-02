@@ -30,16 +30,11 @@
   };
 
   requestAnimationFrame(watcher);
-
-  const change = e => {
-    e.preventDefault();
-    count = parseFloat(e.target.value);
-  };
 </script>
 
 <wrapper style="--text:{color.text}">
   <Button {color} onmousedown={dec} onmouseup={mouseUp}>-</Button>
-  <input bind:value={count} on:change={change} />
+  <input bind:value={count} type="number" />
   <Button {color} onmousedown={inc} onmouseup={mouseUp}>+</Button>
 </wrapper>
 
@@ -64,15 +59,19 @@
     background: transparent;
     transition: 0.1s ease;
     border-radius: 4px;
-
     &:hover {
       background: white;
       color: black;
     }
-
     &:focus {
       color: black;
       background: white;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   }
 </style>
