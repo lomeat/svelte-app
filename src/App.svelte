@@ -42,7 +42,7 @@
 <div class="body" style="--bg:{color.bg}; --text:{color.text}">
   <div class="container">
     <header>
-      <h1>Svelte Example</h1>
+      <h1 class="app-name">Svelte Example</h1>
       <Button {color} on:click={toggleTheme}>Toggle theme</Button>
     </header>
     <Catalog>
@@ -72,6 +72,10 @@
     user-select: none;
   }
 
+  :global(h1) {
+    font-family: $overpass;
+  }
+
   .body {
     width: 100vw;
     min-height: 100%;
@@ -94,9 +98,14 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 100px;
+
+    @media (max-width: 700px) {
+      width: 90vw;
+      text-align: center;
+    }
   }
 
-  h1 {
+  h1.app-name {
     font: bold 30px $overpass;
     font-size: 32px;
     padding: 20px 0;

@@ -22,14 +22,19 @@
     display: flex;
     flex-direction: column;
     width: 18rem;
-    border: 1px solid $text;
+    border: 1px solid #ccc;
     border-radius: 8px;
     color: $text;
     padding: 1rem;
+
+    @media (max-width: 700px) {
+      width: 90vw;
+    }
   }
 
-  h1 {
-    padding: 0 0 0.5rem 0;
+  h1.name {
+    padding-bottom: 0.5rem;
+    font-size: 26px;
   }
 
   .description {
