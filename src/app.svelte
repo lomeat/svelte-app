@@ -1,22 +1,23 @@
 <script>
+  import { darkTheme } from "./store";
   import Counter from "./counter.svelte";
   import Button from "./ui/button.svelte";
 
   let color = {};
-  let darkTheme = localStorage.getItem("darkTheme") || false;
+
+  darkTheme.useLocalStorage();
 
   const toggleTheme = () => {
-    darkTheme = !darkTheme;
-    localStorage.setItem("darkTheme", darkTheme);
+    $darkTheme = !$darkTheme;
   };
 
-  $: if (darkTheme) {
+  $: if ($darkTheme) {
     color = {
       bg: "#474657",
       text: "#f2f2f4"
     };
   }
-  $: if (!darkTheme) {
+  $: if (!$darkTheme) {
     color = {
       bg: "#f2f2f4",
       text: "#212121"
