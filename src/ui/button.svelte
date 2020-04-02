@@ -1,5 +1,5 @@
 <script>
-  import { hold } from "./actions";
+  import { hold } from "../actions";
 
   export let onmousedown = () => {};
   export let onmouseup = () => {};

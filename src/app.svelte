@@ -1,6 +1,6 @@
 <script>
   import Counter from "./counter.svelte";
-  import Button from "./button.svelte";
+  import Button from "./ui/button.svelte";
 
   let darkTheme = false;
   let color = {};
