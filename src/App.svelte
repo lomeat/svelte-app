@@ -1,6 +1,8 @@
 <script>
-  import Counter from "./Counter.svelte";
   import Button from "./ui/Button.svelte";
+  import Catalog from "./ui/Catalog.svelte";
+
+  import Counter from "./Counter.svelte";
   import Card from "./Card.svelte";
   import { darkTheme } from "./store";
 
@@ -38,8 +40,14 @@
       <h1>Svelte Example</h1>
       <Button {color} on:click={toggleTheme}>Toggle theme</Button>
     </div>
-    <!-- <Counter count={42} {color} /> -->
-    <Card {color} />
+    <Catalog>
+      <Card count={0} {color} />
+      <Card count={0} {color} />
+      <Card count={0} {color} />
+      <Card count={0} {color} />
+      <Card count={0} {color} />
+      <Card count={0} {color} />
+    </Catalog>
   </div>
 </div>
 
@@ -61,7 +69,7 @@
 
   .body {
     width: 100vw;
-    height: 100vh;
+    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,10 +78,10 @@
   }
 
   .container {
-    min-height: 500px;
     display: flex;
+    min-height: 100vh;
+    justify-content: space-around;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
   }
 
