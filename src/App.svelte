@@ -7,6 +7,11 @@
   import { darkTheme } from "./store";
 
   let color = {};
+  let card = {
+    name: "Card newname",
+    description: "The dog ate the description",
+    count: 0
+  };
 
   darkTheme.useLocalStorage();
 
@@ -36,17 +41,17 @@
 
 <div class="body" style="--bg:{color.bg}; --text:{color.text}">
   <div class="container">
-    <div class="header">
+    <header>
       <h1>Svelte Example</h1>
       <Button {color} on:click={toggleTheme}>Toggle theme</Button>
-    </div>
+    </header>
     <Catalog>
-      <Card count={0} {color} />
-      <Card count={0} {color} />
-      <Card count={0} {color} />
-      <Card count={0} {color} />
-      <Card count={0} {color} />
-      <Card count={0} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
     </Catalog>
   </div>
 </div>
@@ -80,14 +85,15 @@
   .container {
     display: flex;
     min-height: 100vh;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
   }
 
-  .header {
+  header {
     display: flex;
     flex-direction: column;
+    padding-bottom: 100px;
   }
 
   h1 {
