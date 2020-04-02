@@ -42,8 +42,7 @@
 <style lang="scss">
   wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 300px;
   }
 </style>

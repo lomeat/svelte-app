@@ -1,7 +1,8 @@
 <script>
-  import { darkTheme } from "./store";
   import Counter from "./Counter.svelte";
   import Button from "./ui/Button.svelte";
+  import Card from "./Card.svelte";
+  import { darkTheme } from "./store";
 
   let color = {};
 
@@ -33,9 +34,12 @@
 
 <div class="body" style="--bg:{color.bg}; --text:{color.text}">
   <div class="container">
-    <h1>Counter with holding delay</h1>
-    <Counter count={42} {color} />
-    <Button {color} on:click={toggleTheme}>Toggle theme</Button>
+    <div class="header">
+      <h1>Svelte Example</h1>
+      <Button {color} on:click={toggleTheme}>Toggle theme</Button>
+    </div>
+    <!-- <Counter count={42} {color} /> -->
+    <Card {color} />
   </div>
 </div>
 
@@ -45,7 +49,8 @@
 
   :global(*) {
     box-sizing: border-box;
-    margin: 0 !important;
+    margin: 0;
+    padding: 0;
   }
 
   :global(body) {
@@ -70,6 +75,11 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
   }
 
   h1 {
