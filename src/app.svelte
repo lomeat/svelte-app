@@ -2,11 +2,12 @@
   import Counter from "./counter.svelte";
   import Button from "./ui/button.svelte";
 
-  let darkTheme = false;
   let color = {};
+  let darkTheme = localStorage.getItem("darkTheme") || false;
 
   const toggleTheme = () => {
     darkTheme = !darkTheme;
+    localStorage.setItem("darkTheme", darkTheme);
   };
 
   $: if (darkTheme) {

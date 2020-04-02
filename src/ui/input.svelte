@@ -1,6 +1,7 @@
 <script>
   export let value = "";
   export let color = {};
+  export let type = "";
 </script>
 
 <input bind:value type="number" style="--text:{color.text}" />
