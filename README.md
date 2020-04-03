@@ -1,10 +1,12 @@
 # Svelete App
 
+- Toggle theme to dark or light
+
 ## Counter
 
-- Click to change count by 1
-- Click & hold to change count while you hold button
-- Toggle theme to dark or light
+- Click button to change count by 1
+- Hold button to change count while you hold button
+- Click on number to change value with input
 
 ## Catalog
 
