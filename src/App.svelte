@@ -9,7 +9,8 @@
   let color = {};
   let card = {
     name: "Card newname",
-    description: "The dog ate the description",
+    description:
+      "The dog ate the description. But cat was more attractive for the bridge",
     count: 0
   };
 
@@ -43,9 +44,17 @@
   <div class="container">
     <header>
       <h1 class="app-name">Svelte Example</h1>
-      <Button {color} on:click={toggleTheme}>Toggle theme</Button>
+      <Button class="toggle-theme" {color} on:click={toggleTheme}>
+        {#if $darkTheme}Make light{:else}Make dark{/if}
+      </Button>
     </header>
     <Catalog>
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
+      <Card {...card} {color} />
       <Card {...card} {color} />
       <Card {...card} {color} />
       <Card {...card} {color} />
@@ -92,14 +101,19 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: $tablet-screen) {
+      position: relative;
+      padding: 4rem 0;
+    }
   }
 
   header {
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
+    padding-bottom: 4rem;
 
-    @media (max-width: 700px) {
+    @media (max-width: $mobile-screen) {
       width: 90vw;
       text-align: center;
     }
@@ -110,5 +124,17 @@
     font-size: 32px;
     padding: 20px 0;
     color: $text;
+  }
+
+  .toggle-theme {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+
+    @media (max-width: $tablet-screen) {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
   }
 </style>
