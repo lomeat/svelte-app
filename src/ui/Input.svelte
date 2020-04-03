@@ -2,9 +2,11 @@
   export let value = "";
   export let color = {};
   export let type = "";
+  export let className = "";
+  export { className as class };
 </script>
 
-<input bind:value type="number" style="--text:{color.text}" />
+<input class={className} bind:value type="number" style="--text:{color.text}" />
 
 <style lang="scss">
   $text: var(--text);

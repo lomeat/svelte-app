@@ -1,4 +1,9 @@
-<wrapper>
+<script>
+  export let className = "";
+  export { className as class };
+</script>
+
+<wrapper class={className}>
   <slot />
 </wrapper>
 
