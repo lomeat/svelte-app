@@ -7,7 +7,9 @@
   import Catalog from "./ui/Catalog.svelte";
   import Counter from "./Counter.svelte";
   import Card from "./Card.svelte";
+
   import { darkTheme } from "./store";
+  import { createCardsMock } from "./mocks";
 
   // Theme style (dark/light)
   let style = [];
@@ -21,11 +23,13 @@
     count: 0
   };
 
-  darkTheme.useLocalStorage();
+  const cards = createCardsMock(10);
 
   const toggleTheme = () => {
     $darkTheme = !$darkTheme;
   };
+
+  darkTheme.useLocalStorage();
 
   $: if ($darkTheme) {
     style = [
@@ -70,18 +74,9 @@
       </Button>
     </header>
     <Catalog>
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
-      <Card {...card} />
+      {#each cards as card (card.id)}
+        <Card {...card} />
+      {/each}
     </Catalog>
   </div>
 </div>
