@@ -16,12 +16,13 @@
 <style lang="scss">
   $background: var(--bg);
   $text: var(--text);
+  $borderColor: var(--border-color);
 
   wrapper {
     display: flex;
     flex-direction: column;
     width: 18rem;
-    border: 1px solid #ccc;
+    border: 1px solid $borderColor;
     border-radius: 8px;
     color: $text;
     padding: 1rem;

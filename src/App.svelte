@@ -24,10 +24,18 @@
   };
 
   $: if ($darkTheme) {
-    style = ["--bg:#474657;", "--text:#f2f2f4;"].join("");
+    style = [
+      "--bg: #474657;",
+      "--text: #f2f2f4;",
+      "--border-color: #888;"
+    ].join("");
   }
   $: if (!$darkTheme) {
-    style = ["--bg:#f2f2f4;", "--text:#212121;"].join("");
+    style = [
+      "--bg: #f2f2f4;",
+      "--text: #212121;",
+      "--border-color: #ccc;"
+    ].join("");
   }
 </script>
 

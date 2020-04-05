@@ -14,10 +14,12 @@
 <style lang="scss">
   $background: var(--bg);
   $text: var(--text);
+  $borderColor: var(--border-color);
 
   button {
     padding: 6px 20px;
     border-radius: 4px;
+    border-color: $borderColor;
     font-family: $roboto;
     font-size: 22px;
     background: transparent;
