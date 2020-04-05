@@ -1,7 +1,10 @@
 <script>
+  import FaCircle from "svelte-icons/fa/FaCircle.svelte";
+  import IoMdCart from "svelte-icons/io/IoMdCart.svelte";
+  import FaGithub from "svelte-icons/fa/FaGithub.svelte";
+
   import Button from "./ui/Button.svelte";
   import Catalog from "./ui/Catalog.svelte";
-
   import Counter from "./Counter.svelte";
   import Card from "./Card.svelte";
   import { darkTheme } from "./store";
@@ -53,11 +56,18 @@
     <header>
       <h1 class="app-name">Svelte Example</h1>
       <navbar>
-        <Button>Cart</Button>
-        <Button on:click={toggleTheme}>
-          {#if $darkTheme}Make light{:else}Make dark{/if}
+        <Button class="item">
+          <IoMdCart />
+        </Button>
+        <Button class="item" on:click={toggleTheme}>
+          <FaCircle />
         </Button>
       </navbar>
+      <Button class="item github-link">
+        <a href="https://github.com/lomeat/svelte-app">
+          <FaGithub />
+        </a>
+      </Button>
     </header>
     <Catalog>
       <Card {...card} />
@@ -139,13 +149,40 @@
     top: 1rem;
     right: 1rem;
     display: flex;
-    width: 15rem;
+    width: 7rem;
     justify-content: space-between;
 
     @media (max-width: $tablet-screen) {
       position: absolute;
       top: 1rem;
       right: 1rem;
+    }
+  }
+  .item {
+    width: 3rem;
+    height: 3rem;
+    color: $text;
+    padding: 0.6rem !important;
+  }
+
+  .github-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+
+    @media (max-width: $tablet-screen) {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+    }
+
+    a {
+      color: $text;
+      text-decoration: none;
+
+      &:visited {
+        color: $text;
+      }
     }
   }
 </style>

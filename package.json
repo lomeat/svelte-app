@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "normalize-scss": "^7.0.1",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "svelte-icons": "^2.1.0"
   }
 }
