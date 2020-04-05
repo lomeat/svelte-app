@@ -6,7 +6,10 @@
   import Card from "./Card.svelte";
   import { darkTheme } from "./store";
 
-  let color = {};
+  // Theme style (dark/light)
+  let style = [];
+
+  // Card mock
   let card = {
     name: "Card newname",
     description:
@@ -21,16 +24,10 @@
   };
 
   $: if ($darkTheme) {
-    color = {
-      bg: "#474657",
-      text: "#f2f2f4"
-    };
+    style = ["--bg:#474657;", "--text:#f2f2f4;"].join("");
   }
   $: if (!$darkTheme) {
-    color = {
-      bg: "#f2f2f4",
-      text: "#212121"
-    };
+    style = ["--bg:#f2f2f4;", "--text:#212121;"].join("");
   }
 </script>
 
@@ -40,27 +37,27 @@
     rel="stylesheet" />
 </svelte:head>
 
-<div class="body" style="--bg:{color.bg}; --text:{color.text}">
+<div class="body" {style}>
   <div class="container">
     <header>
       <h1 class="app-name">Svelte Example</h1>
-      <Button class="toggle-theme" {color} on:click={toggleTheme}>
+      <Button class="toggle-theme" on:click={toggleTheme}>
         {#if $darkTheme}Make light{:else}Make dark{/if}
       </Button>
     </header>
     <Catalog>
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
-      <Card {...card} {color} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
+      <Card {...card} />
     </Catalog>
   </div>
 </div>

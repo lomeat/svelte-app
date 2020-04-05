@@ -3,16 +3,11 @@
 
   export let onmousedown = () => {};
   export let onmouseup = () => {};
-  export let color = {};
   export let className = "";
   export { className as class };
 </script>
 
-<button
-  style="--bg:{color.bg}; --text:{color.text}"
-  class={className}
-  on:click
-  use:hold={[onmousedown, onmouseup]}>
+<button class={className} on:click use:hold={[onmousedown, onmouseup]}>
   <slot />
 </button>
 

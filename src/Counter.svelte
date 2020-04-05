@@ -3,7 +3,6 @@
   import Input from "./ui/Input.svelte";
 
   export let count = 1;
-  export let color = {};
 
   const defaultDelay = 100;
   let delay = defaultDelay;
@@ -33,10 +32,10 @@
   requestAnimationFrame(watcher);
 </script>
 
-<wrapper style="--text:{color.text}">
-  <Button {color} onmousedown={dec} onmouseup={mouseUp}>-</Button>
-  <Input {color} bind:value={count} type="number" />
-  <Button {color} onmousedown={inc} onmouseup={mouseUp}>+</Button>
+<wrapper>
+  <Button onmousedown={dec} onmouseup={mouseUp}>-</Button>
+  <Input bind:value={count} type="number" />
+  <Button onmousedown={inc} onmouseup={mouseUp}>+</Button>
 </wrapper>
 
 <style lang="scss">
