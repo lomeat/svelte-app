@@ -60,14 +60,14 @@
     <header>
       <h1 class="app-name">Svelte Shop Example</h1>
       <navbar>
-        <Button class="item">
+        <Button class="row-item">
           <IoMdCart />
         </Button>
-        <Button class="item" on:click={toggleTheme}>
+        <Button class="row-item" on:click={toggleTheme}>
           <FaCircle />
         </Button>
       </navbar>
-      <Button class="item github-link">
+      <Button class="row-item github-link">
         <a href="https://github.com/lomeat/svelte-app">
           <FaGithub />
         </a>
@@ -92,10 +92,6 @@
     margin: 0;
     padding: 0;
     user-select: none;
-  }
-
-  :global(h1) {
-    font-family: $overpass;
   }
 
   .body {
@@ -133,7 +129,7 @@
   }
 
   h1.app-name {
-    font: bold 30px $overpass;
+    font: bold 2rem $overpass;
     font-size: 32px;
     padding: 20px 0;
     color: $text;
@@ -152,12 +148,6 @@
       top: 1rem;
       right: 1rem;
     }
-  }
-  .item {
-    width: 3rem;
-    height: 3rem;
-    color: $text;
-    padding: 0.6rem !important;
   }
 
   .github-link {

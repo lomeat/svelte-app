@@ -1,4 +1,7 @@
 <script>
+  import CartIcon from "svelte-icons/io/IoMdCart.svelte";
+  import BuyIcon from "svelte-icons/md/MdAttachMoney.svelte";
+
   import Counter from "./Counter.svelte";
   import Button from "./ui/Button.svelte";
 
@@ -17,7 +20,12 @@
   <span class="description">{description}</span>
   <div class="footer">
     <Counter {count} />
-    <Button>Cart</Button>
+    <Button class="row-item">
+      <CartIcon />
+    </Button>
+    <Button class="row-item">
+      <BuyIcon />
+    </Button>
   </div>
 </wrapper>
 

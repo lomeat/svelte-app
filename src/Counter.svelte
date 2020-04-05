@@ -1,4 +1,7 @@
 <script>
+  import FaPlus from "svelte-icons/fa/FaPlus.svelte";
+  import FaMinus from "svelte-icons/fa/FaMinus.svelte";
+
   import Button from "./ui/Button.svelte";
   import Input from "./ui/Input.svelte";
 
@@ -34,9 +37,13 @@
 </script>
 
 <wrapper>
-  <Button onmousedown={dec} onmouseup={mouseUp}>-</Button>
+  <Button class="count" onmousedown={dec} onmouseup={mouseUp}>
+    <FaMinus />
+  </Button>
   <Input bind:value={count} type="number" />
-  <Button onmousedown={inc} onmouseup={mouseUp}>+</Button>
+  <Button class="count" onmousedown={inc} onmouseup={mouseUp}>
+    <FaPlus />
+  </Button>
 </wrapper>
 
 <style lang="scss">
@@ -44,6 +51,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 13rem;
   }
 </style>

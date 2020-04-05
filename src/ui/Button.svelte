@@ -13,16 +13,18 @@
 
 <style lang="scss">
   button {
-    padding: 6px 20px;
     border-radius: 4px;
     border-color: $border;
     font-family: $roboto;
     font-size: 1rem;
     line-height: 1.7rem;
     background: transparent;
-    color: $text;
     transition: 0.1s ease;
     cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    color: $text;
+    padding: 0.6rem;
 
     &:hover {
       box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.1);
@@ -32,5 +34,17 @@
       background: transparent;
       box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.2);
     }
+  }
+
+  .count {
+    border: 0;
+    padding: 0.9rem;
+  }
+
+  .row-item {
+    width: 3rem;
+    height: 3rem;
+    color: $text;
+    padding: 0.6rem !important;
   }
 </style>
