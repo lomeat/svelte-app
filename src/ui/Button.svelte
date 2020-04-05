@@ -17,7 +17,8 @@
     border-radius: 4px;
     border-color: $border;
     font-family: $roboto;
-    font-size: 22px;
+    font-size: 1rem;
+    line-height: 1.7rem;
     background: transparent;
     color: $text;
     transition: 0.1s ease;

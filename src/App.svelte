@@ -54,7 +54,7 @@
 <div class="body" {style}>
   <div class="container">
     <header>
-      <h1 class="app-name">Svelte Example</h1>
+      <h1 class="app-name">Svelte Shop Example</h1>
       <navbar>
         <Button class="item">
           <IoMdCart />
