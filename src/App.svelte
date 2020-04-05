@@ -11,7 +11,8 @@
 
   // Card mock
   let card = {
-    name: "Card newname",
+    name: "Nightmare Book",
+    price: "$499.99",
     description:
       "The dog ate the description. But cat was more attractive for the bridge",
     count: 0
@@ -27,14 +28,16 @@
     style = [
       "--bg: #474657;",
       "--text: #f2f2f4;",
-      "--border-color: #888;"
+      "--border: #888;",
+      "--sub-text: #bbb"
     ].join("");
   }
   $: if (!$darkTheme) {
     style = [
       "--bg: #f2f2f4;",
       "--text: #212121;",
-      "--border-color: #ccc;"
+      "--border: #ccc;",
+      "--sub-text: #555"
     ].join("");
   }
 </script>

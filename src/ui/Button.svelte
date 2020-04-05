@@ -15,7 +15,7 @@
   button {
     padding: 6px 20px;
     border-radius: 4px;
-    border-color: $borderColor;
+    border-color: $border;
     font-family: $roboto;
     font-size: 22px;
     background: transparent;

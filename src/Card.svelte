@@ -3,12 +3,16 @@
 
   export let count = 0;
   export let name = "Card name";
+  export let price = "$123";
   export let description =
     "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis ratione voluptatibus consequuntur sit tempora doloribus aut.";
 </script>
 
 <wrapper>
-  <h1 class="name">{name}</h1>
+  <div class="header">
+    <h2 class="name">{name}</h2>
+    <span class="price">{price}</span>
+  </div>
   <span class="description">{description}</span>
   <Counter {count} />
 </wrapper>
@@ -17,8 +21,8 @@
   wrapper {
     display: flex;
     flex-direction: column;
-    width: 18rem;
-    border: 1px solid $borderColor;
+    width: 21rem;
+    border: 1px solid $border;
     border-radius: 8px;
     color: $text;
     padding: 1rem;
@@ -28,13 +32,33 @@
     }
   }
 
-  h1.name {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  h2.name {
     padding-bottom: 0.5rem;
-    font-size: 26px;
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-family: $overpass;
+    text-overflow: ellipsis;
+    padding-right: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    font-family: $overpass;
   }
 
   .description {
-    line-height: 1.5rem;
+    line-height: 1.3rem;
+    font-size: 0.9rem;
     padding: 0 0 1rem 0;
+    color: $sub-text;
   }
 </style>
