@@ -13,6 +13,7 @@
   $: if (count > 0 && count < 100) delay = defaultDelay;
   $: if (count > 100 && count < 1000) delay = defaultDelay / 2;
   $: if (count > 1000) delay = defaultDelay / 6;
+  $: if (count >= 9999) count = 9999;
 
   const dec = () => (koef = -1);
   const inc = () => (koef = 1);
