@@ -1,6 +1,13 @@
+// Fonts
 $fira: "Fira Code Medium", monospace;
 $roboto: "Roboto", sans-serif;
 $overpass: "Overpass", sans-serif;
 
+// Screens
 $tablet-screen: 1200px;
 $mobile-screen: 700px;
+
+// Theme colors
+$background: var(--bg);
+$text: var(--text);
+$borderColor: var(--border-color);

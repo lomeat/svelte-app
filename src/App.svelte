@@ -71,9 +71,6 @@
 </div>
 
 <style lang="scss" global>
-  $background: var(--bg);
-  $text: var(--text);
-
   :global(*) {
     box-sizing: border-box;
     margin: 0;

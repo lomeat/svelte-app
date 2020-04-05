@@ -8,8 +8,6 @@
 <input class={className} bind:value type="number" />
 
 <style lang="scss">
-  $text: var(--text);
-
   input {
     outline: none;
     text-align: center;

@@ -12,10 +12,6 @@
 </button>
 
 <style lang="scss">
-  $background: var(--bg);
-  $text: var(--text);
-  $borderColor: var(--border-color);
-
   button {
     padding: 6px 20px;
     border-radius: 4px;

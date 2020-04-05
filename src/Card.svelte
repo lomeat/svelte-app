@@ -14,10 +14,6 @@
 </wrapper>
 
 <style lang="scss">
-  $background: var(--bg);
-  $text: var(--text);
-  $borderColor: var(--border-color);
-
   wrapper {
     display: flex;
     flex-direction: column;
@@ -27,7 +23,7 @@
     color: $text;
     padding: 1rem;
 
-    @media (max-width: 700px) {
+    @media (max-width: $mobile-screen) {
       width: 90vw;
     }
   }

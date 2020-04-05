@@ -14,12 +14,12 @@
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
 
-    @media (max-width: 700px) {
+    @media (max-width: $mobile-screen) {
       grid-template-columns: 1fr;
       grid-row-gap: 2rem;
     }
 
-    @media (max-width: 1200px) and (min-width: 700px) {
+    @media (max-width: $tablet-screen) and (min-width: $mobile-screen) {
       grid-template-columns: 1fr 1fr;
     }
   }
