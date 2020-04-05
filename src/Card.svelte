@@ -1,5 +1,6 @@
 <script>
   import Counter from "./Counter.svelte";
+  import Button from "./ui/Button.svelte";
 
   export let count = 0;
   export let name = "Card name";
@@ -14,7 +15,10 @@
     <span class="price">{price}</span>
   </div>
   <span class="description">{description}</span>
-  <Counter {count} />
+  <div class="footer">
+    <Counter {count} />
+    <Button>Cart</Button>
+  </div>
 </wrapper>
 
 <style lang="scss">
@@ -60,5 +64,10 @@
     font-size: 0.9rem;
     padding: 0 0 1rem 0;
     color: $sub-text;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
   }
 </style>

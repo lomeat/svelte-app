@@ -24,12 +24,12 @@
     cursor: pointer;
 
     &:hover {
-      filter: brightness(0.9);
+      box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.1);
     }
 
     &:active {
-      background: $background;
-      box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+      background: transparent;
+      box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.2);
     }
   }
 </style>

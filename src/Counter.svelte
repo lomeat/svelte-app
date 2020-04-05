@@ -44,5 +44,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 13rem;
   }
 </style>

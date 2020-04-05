@@ -12,20 +12,18 @@
     outline: none;
     text-align: center;
     border: 0;
-    width: 100px;
+    width: 5rem;
     font: 20px $fira;
     color: $text;
     border-bottom: 1px solid transparent;
     background: transparent;
     transition: 0.1s ease;
-    border-radius: 4px;
+    border-radius: 0px;
     &:hover {
-      background: white;
-      color: black;
+      border-color: $border;
     }
     &:focus {
-      color: black;
-      background: white;
+      border-color: $text;
     }
 
     &::-webkit-outer-spin-button,
