@@ -52,9 +52,12 @@
   <div class="container">
     <header>
       <h1 class="app-name">Svelte Example</h1>
-      <Button class="toggle-theme" on:click={toggleTheme}>
-        {#if $darkTheme}Make light{:else}Make dark{/if}
-      </Button>
+      <navbar>
+        <Button>Cart</Button>
+        <Button on:click={toggleTheme}>
+          {#if $darkTheme}Make light{:else}Make dark{/if}
+        </Button>
+      </navbar>
     </header>
     <Catalog>
       <Card {...card} />
@@ -131,10 +134,13 @@
     color: $text;
   }
 
-  .toggle-theme {
+  navbar {
     position: fixed;
     top: 1rem;
     right: 1rem;
+    display: flex;
+    width: 15rem;
+    justify-content: space-between;
 
     @media (max-width: $tablet-screen) {
       position: absolute;
