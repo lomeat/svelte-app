@@ -1,7 +1,7 @@
 <script>
-  import FaCircle from "svelte-icons/fa/FaCircle.svelte";
-  import IoMdCart from "svelte-icons/io/IoMdCart.svelte";
-  import FaGithub from "svelte-icons/fa/FaGithub.svelte";
+  import ThemeIcon from "svelte-icons/fa/FaCircle.svelte";
+  import CartIcon from "svelte-icons/io/IoMdCart.svelte";
+  import GithubIcon from "svelte-icons/fa/FaGithub.svelte";
 
   import Button from "./ui/Button.svelte";
   import Catalog from "./ui/Catalog.svelte";
@@ -60,16 +60,16 @@
     <header>
       <h1 class="app-name">Svelte Shop Example</h1>
       <navbar>
-        <Button class="row-item">
-          <IoMdCart />
+        <Button class="icon">
+          <CartIcon />
         </Button>
-        <Button class="row-item" on:click={toggleTheme}>
-          <FaCircle />
+        <Button class="icon" on:click={toggleTheme}>
+          <ThemeIcon />
         </Button>
       </navbar>
-      <Button class="row-item github-link">
+      <Button class="icon github-link">
         <a href="https://github.com/lomeat/svelte-app">
-          <FaGithub />
+          <GithubIcon />
         </a>
       </Button>
     </header>

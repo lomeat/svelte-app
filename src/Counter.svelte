@@ -37,11 +37,11 @@
 </script>
 
 <wrapper>
-  <Button class="count" onmousedown={dec} onmouseup={mouseUp}>
+  <Button class="count icon" onmousedown={dec} onmouseup={mouseUp}>
     <FaMinus />
   </Button>
   <Input bind:value={count} type="number" />
-  <Button class="count" onmousedown={inc} onmouseup={mouseUp}>
+  <Button class="count icon" onmousedown={inc} onmouseup={mouseUp}>
     <FaPlus />
   </Button>
 </wrapper>

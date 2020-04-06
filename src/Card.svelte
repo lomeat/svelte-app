@@ -23,10 +23,10 @@
   <span class="description">{description}</span>
   <div class="footer">
     <Counter {count} />
-    <Button class="row-item">
+    <Button class="icon">
       <CartIcon />
     </Button>
-    <Button class="row-item">
+    <Button class="icon">
       <BuyIcon />
     </Button>
   </div>

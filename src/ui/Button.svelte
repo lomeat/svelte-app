@@ -21,10 +21,8 @@
     background: transparent;
     transition: 0.1s ease;
     cursor: pointer;
-    width: 3rem;
-    height: 3rem;
     color: $text;
-    padding: 0.6rem;
+    padding: 0.8rem;
 
     &:hover {
       box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.1);
@@ -41,10 +39,10 @@
     padding: 0.9rem;
   }
 
-  .row-item {
+  .icon {
     width: 3rem;
     height: 3rem;
     color: $text;
-    padding: 0.6rem !important;
+    padding: 0.6rem;
   }
 </style>
