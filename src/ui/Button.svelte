@@ -42,5 +42,9 @@
     height: 3rem;
     color: $text;
     padding: 0.6rem;
+
+    &-buy {
+      margin-left: 0.5rem;
+    }
   }
 </style>

@@ -30,12 +30,14 @@
   <span class="description">{description}</span>
   <div class="footer">
     <Counter {count} />
-    <Button class="icon">
-      <CartIcon />
-    </Button>
-    <Button on:click={buy} class="icon">
-      <BuyIcon />
-    </Button>
+    <div class="buttons-wrapper">
+      <Button class="icon">
+        <CartIcon />
+      </Button>
+      <Button on:click={buy} class="icon icon-buy">
+        <BuyIcon />
+      </Button>
+    </div>
   </div>
 </wrapper>
 
