@@ -2,6 +2,7 @@
   import CartIcon from "svelte-icons/io/IoMdCart.svelte";
   import BuyIcon from "svelte-icons/md/MdAttachMoney.svelte";
 
+  import { userMoney } from "./store";
   import Counter from "./Counter.svelte";
   import Button from "./ui/Button.svelte";
 
@@ -13,6 +14,12 @@
   export let description = "";
 
   $: updatePrice = price * count;
+
+  const buy = () => {
+    if ($userMoney - price >= 0) {
+      $userMoney -= price;
+    }
+  };
 </script>
 
 <wrapper>
@@ -26,7 +33,7 @@
     <Button class="icon">
       <CartIcon />
     </Button>
-    <Button class="icon">
+    <Button on:click={buy} class="icon">
       <BuyIcon />
     </Button>
   </div>
@@ -64,7 +71,6 @@
   }
 
   .price {
-    font-weight: bold;
     font-size: 1.1rem;
     line-height: 1.3rem;
     font-family: $overpass;

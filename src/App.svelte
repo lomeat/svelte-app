@@ -1,4 +1,9 @@
 <script>
+  // BUG:  Расползаются кнопки на карточке в мобильном виде
+  // TODO: Колво денег уменьшается при покупке
+  // TODO: Инокнки плюс/минус меньше
+  // TODO: Цвет для карточек в теме
+
   import ThemeIcon from "svelte-icons/fa/FaCircle.svelte";
   import CartIcon from "svelte-icons/io/IoMdCart.svelte";
   import GithubIcon from "svelte-icons/fa/FaGithub.svelte";
@@ -8,7 +13,7 @@
   import Counter from "./Counter.svelte";
   import Card from "./Card.svelte";
 
-  import { darkTheme } from "./store";
+  import { darkTheme, userMoney } from "./store";
   import { createCardsMock } from "./mocks";
 
   // Theme style (dark/light)
@@ -23,7 +28,7 @@
     count: 0
   };
 
-  const cards = createCardsMock(10);
+  const cards = createCardsMock(20);
 
   const toggleTheme = () => {
     $darkTheme = !$darkTheme;
@@ -60,10 +65,11 @@
     <header>
       <h1 class="app-name">Svelte Shop Example</h1>
       <navbar>
-        <Button class="icon">
+        <span class="money item">${$userMoney.toFixed(2)}</span>
+        <Button class="icon item">
           <CartIcon />
         </Button>
-        <Button class="icon" on:click={toggleTheme}>
+        <Button class="icon item" on:click={toggleTheme}>
           <ThemeIcon />
         </Button>
       </navbar>
@@ -110,6 +116,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    padding: 6rem 0;
 
     @media (max-width: $tablet-screen) {
       position: relative;
@@ -137,17 +144,36 @@
 
   navbar {
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    top: 0rem;
+    right: 0rem;
+    padding: 1rem 1rem 0 0;
+    width: 100%;
     display: flex;
-    width: 7rem;
-    justify-content: space-between;
+    justify-content: flex-end;
+    background: $background;
+    transition: 0.3s ease;
+
+    .item {
+      margin-right: 1rem;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
 
     @media (max-width: $tablet-screen) {
       position: absolute;
       top: 1rem;
       right: 1rem;
     }
+  }
+
+  .money {
+    line-height: 3.35rem;
+    font-size: 1.3rem;
+    font-family: $overpass;
+    font-weight: bold;
+    color: $text;
   }
 
   .github-link {

@@ -8,7 +8,7 @@ export const createCardsMock = (amount) => {
     "Pee-ka-boo",
     "Xiaomi Redmi Note 5 (128gb/6gb)",
   ];
-  const cardPrices = [199.99, 299.99, 12.03, 1499.99, 49, 347, 2];
+  const cardPrices = [100, 299.99, 12.03, 1499.99, 50, 347, 2];
 
   for (let a = 0; a < amount; a++) {
     const card = {
