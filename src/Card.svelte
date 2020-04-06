@@ -50,6 +50,7 @@
     border-radius: 8px;
     color: $text;
     padding: 1rem;
+    background: $background-card;
 
     @media (max-width: $mobile-screen) {
       width: 90vw;

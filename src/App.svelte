@@ -1,6 +1,4 @@
 <script>
-  // TODO: Цвет для карточек в теме
-
   import ThemeIcon from "svelte-icons/fa/FaCircle.svelte";
   import CartIcon from "svelte-icons/io/IoMdCart.svelte";
   import GithubIcon from "svelte-icons/fa/FaGithub.svelte";
@@ -36,16 +34,18 @@
   $: if ($darkTheme) {
     style = [
       "--bg: #474657;",
+      "--bg-card: #3e3d4b;",
       "--text: #f2f2f4;",
-      "--border: #888;",
+      "--border: #646464;",
       "--sub-text: #bbb"
     ].join("");
   }
   $: if (!$darkTheme) {
     style = [
       "--bg: #f2f2f4;",
+      "--bg-card: #ffffff;",
       "--text: #212121;",
-      "--border: #ccc;",
+      "--border: #dddddd;",
       "--sub-text: #555"
     ].join("");
   }

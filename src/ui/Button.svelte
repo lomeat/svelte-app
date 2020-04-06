@@ -24,11 +24,11 @@
     color: $text;
     padding: 0.6rem;
     &:hover {
-      box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.1);
+      background: $background;
     }
     &:active {
-      background: transparent;
-      box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.2);
+      background: $background;
+      box-shadow: inset 1px 2px 6px rgba(0, 0, 0, 0.2);
     }
   }
 
