@@ -13,7 +13,7 @@
   import Counter from "./Counter.svelte";
   import Card from "./Card.svelte";
 
-  import { darkTheme, userMoney } from "./store";
+  import { darkTheme, user } from "./store";
   import { createCardsMock } from "./mocks";
 
   // Theme style (dark/light)
@@ -65,7 +65,7 @@
     <header>
       <h1 class="app-name">Svelte Shop Example</h1>
       <navbar>
-        <span class="money item">${$userMoney.toFixed(2)}</span>
+        <span class="money item">${$user.money.toFixed(2)}</span>
         <Button class="icon item">
           <CartIcon />
         </Button>
