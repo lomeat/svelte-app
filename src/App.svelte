@@ -1,5 +1,4 @@
 <script>
-  // TODO: Инокнки плюс/минус меньше
   // TODO: Цвет для карточек в теме
 
   import ThemeIcon from "svelte-icons/fa/FaCircle.svelte";

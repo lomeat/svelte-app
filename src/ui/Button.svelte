@@ -22,7 +22,7 @@
     transition: 0.1s ease;
     cursor: pointer;
     color: $text;
-    padding: 0.8rem;
+    padding: 0.6rem;
     &:hover {
       box-shadow: inset 50px 50px 0px rgba(0, 0, 0, 0.1);
     }
@@ -41,7 +41,6 @@
     width: 3rem;
     height: 3rem;
     color: $text;
-    padding: 0.6rem;
 
     &-buy {
       margin-left: 0.5rem;
