@@ -5,17 +5,20 @@
   import Counter from "./Counter.svelte";
   import Button from "./ui/Button.svelte";
 
-  export let count = 0;
+  // Props
+  export let id;
+  export let count = 1;
   export let name = "Card name";
-  export let price = "$123";
-  export let description =
-    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis ratione voluptatibus consequuntur sit tempora doloribus aut.";
+  export let price = 123;
+  export let description = "";
+
+  $: updatePrice = price * count;
 </script>
 
 <wrapper>
   <div class="header">
     <h2 class="name">{name}</h2>
-    <span class="price">{price}</span>
+    <span class="price">${updatePrice}</span>
   </div>
   <span class="description">{description}</span>
   <div class="footer">
