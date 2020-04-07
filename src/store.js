@@ -21,6 +21,6 @@ const createWritableStore = (key, startValue) => {
 
 export const darkTheme = createWritableStore("darkTheme", false);
 export const user = writable({
-  name: "Tomas Peterson",
+  name: "Michael Filipenko",
   money: 2000,
 });

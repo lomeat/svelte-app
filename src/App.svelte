@@ -62,11 +62,14 @@
     <header>
       <h1 class="app-name">Svelte Shop Example</h1>
       <navbar>
+        <!-- pos: absolute -->
         <Button class="icon github-link">
           <a href="https://github.com/lomeat/svelte-app">
             <GithubIcon />
           </a>
         </Button>
+        <span class="user">{$user.name}</span>
+        <!-- /pos: absolute -->
         <span class="money item">${$user.money.toFixed(2)}</span>
         <Button class="icon item">
           <CartIcon />
@@ -143,7 +146,7 @@
     position: fixed;
     top: 0rem;
     right: 0rem;
-    padding: 1rem 1rem 0 0;
+    padding: 1rem 1rem 0 1rem;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -163,6 +166,20 @@
     }
   }
 
+  .user {
+    line-height: 3.35rem;
+    font-size: 1.3rem;
+    font-family: $overpass;
+    font-weight: bold;
+    color: $text;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 1rem;
+  }
+
   .money {
     line-height: 3.35rem;
     font-size: 1.3rem;
@@ -178,8 +195,6 @@
 
     @media (max-width: $tablet-screen) {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
     }
 
     a {

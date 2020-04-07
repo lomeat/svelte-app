@@ -41,6 +41,7 @@
     width: 3rem;
     height: 3rem;
     color: $text;
+    z-index: 1;
 
     &-buy {
       margin-left: 0.5rem;
