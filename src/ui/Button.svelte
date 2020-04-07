@@ -47,4 +47,22 @@
       margin-left: 0.5rem;
     }
   }
+
+  .navbar-item {
+    margin-right: 1rem;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .github-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+
+    @media (max-width: $tablet-screen) {
+      position: absolute;
+    }
+  }
 </style>

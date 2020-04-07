@@ -3,10 +3,10 @@ export const createCardsMock = (amount) => {
   const cardNames = [
     "Nightmare Book",
     "iPhone 11 Pro",
-    "Sticker pack 'JxM'",
-    "Nvidia Geforce RTX 2070",
-    "Pee-ka-boo",
-    "Xiaomi Redmi Note 5 (128gb/6gb)",
+    "Sticker pack 'Apples'",
+    "Document",
+    "One cigarette",
+    "Paper Dock",
   ];
   const cardPrices = [100, 299.99, 12.03, 1499.99, 50, 347, 2];
   const cardImages = [
