@@ -11,6 +11,7 @@
   export let count = 1;
   export let name = "Card name";
   export let price = 123;
+  export let image;
   export let description = "";
 
   $: updatePrice = price * count;
@@ -27,6 +28,9 @@
     <h2 class="name">{name}</h2>
     <span class="price">${updatePrice}</span>
   </div>
+  <img
+    src={`https://img.icons8.com/dusk/100/000000/${image}.png`}
+    class="image" />
   <span class="description">{description}</span>
   <div class="footer">
     <Counter {count} />
@@ -77,6 +81,14 @@
     font-size: 1.1rem;
     line-height: 1.3rem;
     font-family: $overpass;
+  }
+
+  .image {
+    width: 100%;
+    padding: 5rem;
+    color: $text;
+    image-rendering: pixelated;
+    align-self: center;
   }
 
   .description {
