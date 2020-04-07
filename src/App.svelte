@@ -62,6 +62,11 @@
     <header>
       <h1 class="app-name">Svelte Shop Example</h1>
       <navbar>
+        <Button class="icon github-link">
+          <a href="https://github.com/lomeat/svelte-app">
+            <GithubIcon />
+          </a>
+        </Button>
         <span class="money item">${$user.money.toFixed(2)}</span>
         <Button class="icon item">
           <CartIcon />
@@ -70,11 +75,6 @@
           <ThemeIcon />
         </Button>
       </navbar>
-      <Button class="icon github-link">
-        <a href="https://github.com/lomeat/svelte-app">
-          <GithubIcon />
-        </a>
-      </Button>
     </header>
     <Catalog>
       {#each cards as card (card.id)}
@@ -160,8 +160,6 @@
 
     @media (max-width: $tablet-screen) {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
     }
   }
 
