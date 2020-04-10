@@ -2,11 +2,10 @@
   import CartIcon from "svelte-icons/io/IoMdCart.svelte";
   import BuyIcon from "svelte-icons/md/MdAttachMoney.svelte";
 
-  import { user } from "./store";
+  import { user, cart } from "./store";
   import Counter from "./Counter.svelte";
   import Button from "./ui/Button.svelte";
 
-  // Props
   export let id;
   export let count = 1;
   export let name = "Card name";
@@ -14,19 +13,32 @@
   export let image;
   export let description = "";
 
-  $: updatePrice = price * count;
-
   const buy = () => {
     if ($user.money - price >= 0) {
       $user.money -= price;
     }
+  };
+
+  const addToCart = () => {
+    $cart = [
+      ...$cart,
+      {
+        id: Math.floor(Math.random() * Date.now()),
+        count,
+        name,
+        price: price * count,
+        image,
+        description
+      }
+    ];
+    console.log($cart);
   };
 </script>
 
 <wrapper>
   <div class="header">
     <h2 class="name">{name}</h2>
-    <span class="price">${updatePrice}</span>
+    <span class="price">${price}</span>
   </div>
   <img
     src={`https://img.icons8.com/dusk/100/000000/${image}.png`}
@@ -35,7 +47,7 @@
   <div class="footer">
     <Counter {count} />
     <div class="buttons-wrapper">
-      <Button class="icon">
+      <Button on:click={addToCart} class="icon">
         <CartIcon />
       </Button>
       <Button on:click={buy} class="icon icon-buy">
@@ -51,7 +63,7 @@
     flex-direction: column;
     width: 21rem;
     border: 1px solid $border;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     color: $text;
     padding: 1rem;
     background: $background-card;

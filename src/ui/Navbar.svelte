@@ -4,9 +4,16 @@
   import GithubIcon from "svelte-icons/fa/FaGithub.svelte";
 
   import Button from "./Button.svelte";
+  import Cart from "../Cart.svelte";
   import { user } from "../store";
 
   export let toggleTheme = () => {};
+
+  let isCartVisible = true;
+
+  const clickCartButton = () => {
+    isCartVisible = !isCartVisible;
+  };
 </script>
 
 <navbar>
@@ -17,9 +24,12 @@
     </a>
   </Button>
   <span class="user">{$user.name}</span>
+  {#if isCartVisible}
+    <Cart />
+  {/if}
   <!-- /pos: absolute -->
   <span class="money navbar-item">${$user.money.toFixed(2)}</span>
-  <Button class="icon navbar-item">
+  <Button on:click={clickCartButton} class="icon navbar-item icon-cart">
     <CartIcon />
   </Button>
   <Button class="icon navbar-item" on:click={toggleTheme}>

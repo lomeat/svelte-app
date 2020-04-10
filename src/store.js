@@ -24,3 +24,4 @@ export const user = writable({
   name: "Michael Filipenko",
   money: 2000,
 });
+export const cart = createWritableStore("cart", []);
