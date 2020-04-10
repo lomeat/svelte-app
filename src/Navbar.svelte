@@ -3,13 +3,13 @@
   import CartIcon from "svelte-icons/io/IoMdCart.svelte";
   import GithubIcon from "svelte-icons/fa/FaGithub.svelte";
 
-  import Button from "./Button.svelte";
-  import Cart from "../Cart.svelte";
-  import { user } from "../store";
+  import Button from "./ui/Button.svelte";
+  import Cart from "./Cart.svelte";
+  import { user } from "./store";
 
   export let toggleTheme = () => {};
 
-  let isCartVisible = true;
+  let isCartVisible = false;
 
   const clickCartButton = () => {
     isCartVisible = !isCartVisible;

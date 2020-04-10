@@ -1,5 +1,5 @@
 <script>
-  import Navbar from "./ui/Navbar.svelte";
+  import Navbar from "./Navbar.svelte";
   import Catalog from "./ui/Catalog.svelte";
   import Counter from "./Counter.svelte";
   import Card from "./Card.svelte";
