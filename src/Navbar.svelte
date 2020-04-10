@@ -5,9 +5,11 @@
 
   import Button from "./ui/Button.svelte";
   import Cart from "./Cart.svelte";
-  import { user } from "./store";
+  import { user, cart } from "./store";
 
   export let toggleTheme = () => {};
+
+  cart.useLocalStorage();
 
   let isCartVisible = false;
 
@@ -18,8 +20,8 @@
 
 <navbar>
   <!-- pos: absolute -->
-  <Button class="icon github-link">
-    <a href="https://github.com/lomeat/svelte-app">
+  <Button class="icon github-link navbar-item">
+    <a target="_blank" href="https://github.com/lomeat/svelte-app">
       <GithubIcon />
     </a>
   </Button>
@@ -31,6 +33,9 @@
   <span class="money navbar-item">${$user.money.toFixed(2)}</span>
   <Button on:click={clickCartButton} class="icon navbar-item icon-cart">
     <CartIcon />
+    {#if $cart.length}
+      <div class="cart-amount">{$cart.length}</div>
+    {/if}
   </Button>
   <Button class="icon navbar-item" on:click={toggleTheme}>
     <ThemeIcon />
@@ -82,5 +87,20 @@
     font-family: $overpass;
     font-weight: bold;
     color: $text;
+  }
+
+  .cart-amount {
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.2rem;
+    background: red;
+    color: white;
+    font-size: 0.8rem;
+    border: 1px solid $border;
+    border-radius: 100%;
+    width: 1.3rem;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    text-align: center;
   }
 </style>

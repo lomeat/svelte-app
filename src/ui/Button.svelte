@@ -41,15 +41,19 @@
     width: 3rem;
     height: 3rem;
     color: $text;
-    z-index: 1;
 
     &-buy {
       margin-left: 0.5rem;
+    }
+
+    &-cart {
+      position: relative;
     }
   }
 
   .navbar-item {
     margin-right: 1rem;
+    z-index: 1;
 
     &:last-child {
       margin: 0;
