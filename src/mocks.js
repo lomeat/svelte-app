@@ -21,6 +21,7 @@ export const createCardsMock = (amount) => {
   for (let a = 0; a < amount; a++) {
     const card = {
       id: a,
+      count: 1,
       name: cardNames[Math.floor(Math.random() * cardNames.length)],
       price: cardPrices[Math.floor(Math.random() * cardPrices.length)],
       image: cardImages[Math.floor(Math.random() * cardImages.length)],

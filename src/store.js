@@ -1,4 +1,7 @@
 import { writable } from "svelte/store";
+import { createCardsMock } from "./mocks";
+
+const cardMocks = createCardsMock(20);
 
 const createWritableStore = (key, startValue) => {
   const { subscribe, set } = writable(startValue);
@@ -25,3 +28,16 @@ export const user = writable({
   money: 2000,
 });
 export const cart = createWritableStore("cart", []);
+export const cards = writable(cardMocks);
+
+import _ from "lodash";
+
+const colorKeys = _.chain(colors)
+  .keys()
+  .filter(
+    (colorKey) =>
+      colorKey.indexOf("bg-") === -1 && colorKey.indexOf("fg-") === -1
+  )
+  .value();
+
+export default _.pick(colors, colorKeys);

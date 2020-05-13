@@ -7,12 +7,11 @@
   import Button from "./ui/Button.svelte";
 
   export let id;
+  export let count = 1;
   export let name = "Card name";
   export let price = 123;
   export let image;
   export let description = "";
-
-  let count = 1;
 
   const buy = () => {
     if ($user.money - price >= 0) {

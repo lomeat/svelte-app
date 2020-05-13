@@ -1,5 +1,8 @@
 <script>
+  // TOOD: Create mobile view cart
+
   import Button from "./ui/Button.svelte";
+  import CartItem from "./CartItem.svelte";
   import { cart, user } from "./store";
 
   cart.useLocalStorage();
@@ -13,32 +16,33 @@
 
     if ($user.money - resultPrice >= 0) {
       $user.money -= resultPrice;
-      removeAllProducts();
+      removeAll();
     } else {
       console.log("no money");
     }
   };
 
-  const removeAllProducts = () => {
+  const removeAll = () => {
     $cart = [];
   };
 
-  const removeOneProduct = id => {
+  const removeOne = id => {
     $cart = $cart.filter(product => product.id !== id);
   };
 </script>
 
 <div class="wrapper">
-  {#if $cart.length}
-    {#each $cart as product (product.id)}
-      <span>
-        {product.name}: ${product.price.toFixed(2)}
-        <Button on:click={() => removeOneProduct(product.id)}>X</Button>
-      </span>
-    {/each}
-  {/if}
-  <Button on:click={buyAll}>Buy all</Button>
-  <Button on:click={removeAllProducts}>Remove all</Button>
+  <div class="container">
+    {#if $cart.length}
+      {#each $cart as product (product.id)}
+        <CartItem {...product} {removeOne} />
+      {/each}
+    {/if}
+  </div>
+  <div class="buttons-wrapper">
+    <Button on:click={buyAll}>Buy all</Button>
+    <Button on:click={removeAll}>Remove all</Button>
+  </div>
 </div>
 
 <style lang="scss">
@@ -54,11 +58,18 @@
     height: 30rem;
     background: $background-card;
     flex-direction: column;
-    overflow-y: auto;
+    justify-content: space-between;
+    overflow: hidden;
 
     &::-webkit-scrollbar-track {
       backgroud: $background !important;
     }
+  }
+  .container {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   span {
